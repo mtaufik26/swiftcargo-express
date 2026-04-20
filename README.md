@@ -2,7 +2,7 @@
 
 > **Company Profile Website** — Solusi logistik modern dengan pengiriman cepat, aman, dan terpercaya untuk bisnis dan personal di seluruh Indonesia.
 
-![alt text](?raw=true)
+![alt text](https://github.com/mtaufik26/swiftcargo-express/blob/main/public/assets/Hero.png?raw=true)
 
 ---
 
