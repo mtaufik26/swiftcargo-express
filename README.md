@@ -1,8 +1,8 @@
-# SwiftCargo Express 🚚✨
+# SwiftCargo Express
 
 > **Company Profile Website** — Solusi logistik modern dengan pengiriman cepat, aman, dan terpercaya untuk bisnis dan personal di seluruh Indonesia.
 
-![SwiftCargo Preview](https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=630&fit=crop)
+![alt text](?raw=true)
 
 ---
 
