@@ -51,6 +51,28 @@ export const stats = {
   },
 };
 
+// Visual Column animation - enters from right
+export const visualColumn = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, delay: 0.4, ...springSmooth },
+  },
+};
+
+// Floating animation for UI cards
+export const floating = {
+  animate: {
+    y: [0, -15, 0],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
 // Container stagger untuk future expansion
 export const container = {
   hidden: {},

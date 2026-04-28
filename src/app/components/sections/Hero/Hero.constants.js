@@ -39,6 +39,11 @@ export const HERO_STATS = [
 ];
 
 export const HERO_BG = {
-  src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&h=1080&fit=crop",
-  alt: "Logistics warehouse",
+  src: "/assets/images/hero/modern-hero.png",
+  alt: "SwiftCargo Express Modern Logistics",
+};
+
+export const HERO_VISUALS = {
+  main: "/assets/images/hero/modern-hero.png",
+  tracking: "/assets/images/hero/tracking-card.png",
 };

@@ -13,10 +13,10 @@ export const FEATURES = [
 ];
 
 export const IMAGES = [
-  { src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop", alt: "Warehouse", height: "h-40 md:h-64", order: "first" },
-  { src: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=400&fit=crop", alt: "Delivery", height: "h-32 md:h-48", order: "second" },
-  { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop", alt: "Team", height: "h-32 md:h-48", order: "third" },
-  { src: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&h=400&fit=crop", alt: "Logistics", height: "h-40 md:h-64", order: "fourth" },
+  { src: "/assets/images/about/warehouse.png", alt: "Warehouse", height: "h-40 md:h-64", order: "first" },
+  { src: "/assets/images/about/delivery.png", alt: "Delivery", height: "h-32 md:h-48", order: "second" },
+  { src: "/assets/images/about/team.png", alt: "Team", height: "h-32 md:h-48", order: "third" },
+  { src: "/assets/images/about/app.png", alt: "Logistics", height: "h-40 md:h-64", order: "fourth" },
 ];
 
 export const EXPERIENCE_BADGE = {
