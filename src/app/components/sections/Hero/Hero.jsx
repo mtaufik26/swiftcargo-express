@@ -9,7 +9,7 @@ const iconMap = { Clock, Package, Truck };
 
 export default function Hero() {
   return (
-    <section className="relative flex items-start bg-white pt-16 pb-12 sm:pt-20 sm:pb-14 md:pt-28 md:pb-24 lg:pt-26 lg:pb-32 px-3 sm:px-4 md:px-6 overflow-hidden">
+    <section className="relative flex items-start bg-white pt-16 pb-12 sm:pt-20 sm:pb-14 md:pt-28 md:pb-24 lg:pt-26 lg:pb-32 px-4 sm:px-6 overflow-hidden">
       
       {/* BACKGROUND */}
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[300px] sm:w-[450px] md:w-[600px] h-[300px] sm:h-[450px] md:h-[600px] bg-blue-50 rounded-full blur-3xl opacity-60 z-0" />
@@ -23,7 +23,7 @@ export default function Hero() {
             variants={visualColumn}
             initial="hidden"
             animate="visible"
-            className="relative order-1 lg:order-2 flex justify-center"
+            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
           >
             {/* IMAGE CONTAINER FIX */}
             <div className="relative z-10 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] shadow-lg sm:shadow-xl md:shadow-2xl shadow-blue-900/10 border-4 sm:border-6 md:border-8 border-white bg-white flex items-center justify-center p-2 sm:p-3 md:p-4">

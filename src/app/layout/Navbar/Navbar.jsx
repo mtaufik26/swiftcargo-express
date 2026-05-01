@@ -22,13 +22,14 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 px-4 sm:px-6 ${
         scrolled ? "py-2 sm:py-3" : "py-2 sm:py-4 md:py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-5 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div
-          className={`flex flex-wrap md:flex-nowrap justify-between items-center backdrop-blur-2xl border transition-all duration-700 ease-in-out rounded-2xl sm:rounded-[1rem] px-4 sm:px-6 py-2.5 sm:py-3 shadow-xl ${
+       // className={`flex flex-wrap md:flex-nowrap justify-between items-center backdrop-blur-2xl border transition-all duration-700 ease-in-out rounded-2xl sm:rounded-[1rem] px-4 sm:px-6 py-2.5 sm:py-3 shadow-xl ${
+          className={`flex flex-wrap md:flex-nowrap justify-between items-center backdrop-blur-2xl border transition-all duration-700 ease-in-out rounded-3xl sm:rounded-[1.7rem] p-3 sm:p-4 shadow-xl ${
             scrolled
               ? "bg-white/80 border-slate-100 shadow-primary/5"
               : "bg-white/40 border-white/30 shadow-transparent"
@@ -124,7 +125,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1, y: 0 }}
             exit={{ height: 0, opacity: 0, y: -20 }}
             transition={{ type: "spring", stiffness: 200, damping: 25 }}
-            className="md:hidden bg-white/95 backdrop-blur-2xl border-b border-slate-100 overflow-hidden mx-3 mt-2 rounded-2xl shadow-xl"
+            className="md:hidden bg-white/95 backdrop-blur-2xl border-b border-slate-100 overflow-hidden mt-2 rounded-2xl shadow-xl"
           >
             <div className="px-4 py-6 space-y-1">
               {NAV_LINKS.map((link) => (

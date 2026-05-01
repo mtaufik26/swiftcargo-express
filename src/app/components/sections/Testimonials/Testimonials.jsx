@@ -17,7 +17,7 @@ export default function Testimonials() {
   const activeTestimonial = TESTIMONIALS[activeIndex];
 
   return (
-    <section id="testimonials" className="relative py-20 md:py-32 lg:py-40 px-6 bg-white overflow-hidden">
+    <section id="testimonials" className="relative py-20 md:py-32 lg:py-40 px-4 sm:px-6 bg-white overflow-hidden">
       
       {/* BACKGROUND */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-slate-50 rounded-full blur-3xl opacity-30 -z-10" />
