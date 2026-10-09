@@ -1,49 +1,53 @@
-export const HERO_BADGE = {
-  text: "SwiftCargo Express - Logistik Terpercaya",
-  pulseColor: "bg-green-500",
-};
-
 export const HERO_CONTENT = {
-  headline: "Pengiriman Cepat & Aman",
-  subheadline: "untuk Bisnis dan Personal",
-  description: "Layanan logistik modern dengan pengiriman cepat, harga kompetitif, dan sistem tracking transparan untuk semua kebutuhan Anda.",
+  badge: "Nationwide Logistics Network",
+  badgeSla: "99.4% On-Time SLA",
+  headline: "Reliable Freight Forwarding,",
+  subheadline: "Engineered for Modern Commerce.",
+  description: "Accelerate your supply chain with scheduled overland trucking, priority air cargo, and temperature-controlled shipping connecting vital economic corridors.",
+  primaryCta: { text: "Explore Freight Solutions", href: "#services" },
+  secondaryCta: { text: "Request a Quote", href: "#contact" },
 };
 
-export const HERO_CTAS = [
-  { text: "Kirim Sekarang", href: "#contact", variant: "primary" },
-  { text: "Pelajari Layanan", href: "#services", variant: "secondary" },
+export const ACTIVE_CONSIGNMENT = {
+  manifestId: "BOL-ORD8492",
+  originCode: "ORD-1",
+  originName: "Chicago Central Hub",
+  destCode: "DFW-4",
+  destName: "Dallas Logistics Terminal",
+  status: "In Transit • On Schedule",
+  etaTime: "Today, 18:45 CST",
+  departureTime: "06:30 CST",
+  unitName: "Unit #SW-8492",
+  fleetType: "32-Ton High Cube Wingbox",
+  temperature: "Ambient (+18°C Controlled)",
+  securityStatus: "RFID Electronic Seal Locked",
+  progressPercent: 74,
+};
+
+export const HERO_METRICS = [
+  {
+    value: "99.4%",
+    label: "On-Time Arrival Rate",
+    subtext: "Guaranteed SLA contract",
+  },
+  {
+    value: "500+",
+    label: "Commercial Fleet Units",
+    subtext: "Active GPS telematics",
+  },
+  {
+    value: "38",
+    label: "Regional Hubs Linked",
+    subtext: "Nationwide corridor reach",
+  },
+  {
+    value: "< 15m",
+    label: "Dispatch Response Time",
+    subtext: "Dedicated 24/7 account team",
+  },
 ];
 
-export const HERO_STATS = [
-  { 
-    icon: "Clock", 
-    value: "24/7", 
-    label: "Layanan Nonstop",
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-600",
-  },
-  { 
-    icon: "Package", 
-    value: "1000+", 
-    label: "Pengiriman/Hari",
-    iconBg: "bg-green-100",
-    iconColor: "text-green-600",
-  },
-  { 
-    icon: "Truck", 
-    value: "50+", 
-    label: "Kota Terjangkau",
-    iconBg: "bg-purple-100",
-    iconColor: "text-purple-600",
-  },
-];
-
-export const HERO_BG = {
+export const HERO_IMAGE = {
   src: "/assets/images/hero/modern-hero.png",
-  alt: "SwiftCargo Express Modern Logistics",
-};
-
-export const HERO_VISUALS = {
-  main: "/assets/images/hero/modern-hero.png",
-  tracking: "/assets/images/hero/tracking-card.png",
+  alt: "SwiftCargo Modern Fleet & Freight Operations",
 };

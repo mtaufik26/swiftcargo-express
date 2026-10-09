@@ -1,9 +1,14 @@
 export const NAV_LINKS = [
-  { name: "Tentang", href: "#about" },
-  { name: "Layanan", href: "#services" },
-  { name: "Keunggulan", href: "#advantages" },
-  { name: "Portofolio", href: "#portfolio" },
-  { name: "Testimoni", href: "#testimonials" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Network", href: "#portfolio" },
+  { name: "Why Us", href: "#advantages" },
+  { name: "Reviews", href: "#testimonials" },
   { name: "FAQ", href: "#faq" },
-  { name: "Kontak", href: "#contact" },
 ];
+
+export const NAV_BRAND = {
+  name: "SwiftCargo",
+  tag: "Express Freight",
+  cta: "Request a Quote",
+};

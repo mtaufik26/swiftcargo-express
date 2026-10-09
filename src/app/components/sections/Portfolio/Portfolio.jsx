@@ -1,133 +1,90 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Package, Truck, ArrowRight } from "lucide-react";
-import {
-  header, gridContainer, card, cardContent,
-  imageContainer, badge, textContent,
-  statsContainer, statItem, viewport
-} from "./Portfolio.animations";
-import { SECTION_HEADER, PORTFOLIO_ITEMS } from "./Portfolio.constants";
-
-const iconMap = { MapPin, Package, Truck };
+import { MapPin, Clock, Truck, ArrowRight } from "lucide-react";
+import { NETWORK_HEADER, CORRIDORS } from "./Portfolio.constants";
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-16 md:py-24 lg:py-32 px-4 sm:px-6 bg-slate-50 overflow-hidden">
-      
-      {/* BACKGROUND DECOR */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-40" />
-        <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-slate-100 rounded-full blur-3xl opacity-60" />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="portfolio" className="relative py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto">
         
         {/* HEADER */}
-        <motion.div
-          variants={header}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          className="text-center mb-16 md:mb-20"
+        <motion.div 
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mb-14 md:mb-16"
         >
-          <div className="inline-flex items-center gap-3 mb-6 mx-auto">
-            <div className="h-[2px] w-8 bg-blue-700" />
-            <p className="text-sm font-bold text-blue-700 tracking-[0.2em] uppercase">
-              {SECTION_HEADER.label}
-            </p>
-            <div className="h-[2px] w-8 bg-blue-700" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-200/60 mb-4 w-fit">
+            <span>{NETWORK_HEADER.badge}</span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-6 md:mb-8 tracking-tight">
-            {SECTION_HEADER.title}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-5">
+            {NETWORK_HEADER.headline}
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-medium">
-            {SECTION_HEADER.description}
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            {NETWORK_HEADER.description}
           </p>
         </motion.div>
 
-        {/* PORTFOLIO GRID */}
-        <motion.div
-          variants={gridContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
-        >
-          {PORTFOLIO_ITEMS.map((item, index) => (
+        {/* 4 KEY CORRIDORS GRID */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {CORRIDORS.map((corridor, idx) => (
             <motion.div
-              key={index}
-              variants={card}
-              whileHover={{ y: -8, scale: 1.01 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="group bg-white rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_70px_rgba(0,0,0,0.1)] border border-slate-100 transition-all duration-500"
+              key={idx}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: idx * 0.12 }}
+              className="bg-slate-50/70 p-7 rounded-3xl border border-slate-200 hover:bg-white hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5 transition-all duration-200 flex flex-col justify-between"
             >
-              {/* IMAGE SECTION */}
-              <div className="relative overflow-hidden h-64 md:h-72">
-                <motion.div
-                  variants={imageContainer}
-                  className="w-full h-full"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    loading="lazy"
-                  />
-                </motion.div>
-                
-                {/* OVERLAY */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                {/* CATEGORY BADGE */}
-                <motion.div
-                  variants={badge}
-                  className="absolute top-6 left-6"
-                >
-                  <span className="bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black text-blue-700 uppercase tracking-widest shadow-lg">
-                    {item.category}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[11px] font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200/60 uppercase tracking-wider">
+                    {corridor.badge}
                   </span>
-                </motion.div>
+                  <span className="text-xs font-semibold text-slate-500">
+                    Transit: <strong className="text-slate-900">{corridor.transitTime}</strong>
+                  </span>
+                </div>
+
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  {corridor.title}
+                </h3>
+
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-700 mb-6 pb-4 border-b border-slate-200/80">
+                  <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>{corridor.route}</span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 mb-4 text-xs">
+                  <div className="p-3 rounded-xl bg-white border border-slate-200/80">
+                    <span className="text-slate-400 block mb-0.5 font-medium">Frequency</span>
+                    <strong className="text-slate-800 font-semibold">{corridor.frequency}</strong>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white border border-slate-200/80">
+                    <span className="text-slate-400 block mb-0.5 font-medium">Equipment</span>
+                    <strong className="text-slate-800 font-semibold">{corridor.fleetTypes}</strong>
+                  </div>
+                </div>
               </div>
 
-              {/* CONTENT SECTION */}
-              <motion.div variants={cardContent} className="p-6 sm:p-8 md:p-10">
-                <motion.h3 variants={textContent} className="text-xl sm:text-2xl font-bold text-primary mb-3 tracking-tight group-hover:text-blue-700 transition-colors">
-                  {item.title}
-                </motion.h3>
-                
-                <motion.p variants={textContent} className="text-slate-500 font-medium mb-8 leading-relaxed line-clamp-2 text-sm md:text-base">
-                  {item.description}
-                </motion.p>
-
-                {/* STATS */}
-                <motion.div
-                  variants={statsContainer}
-                  className="grid grid-cols-3 gap-4 pt-8 border-t border-slate-50"
+              <div className="pt-3 border-t border-slate-200/60">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-800 hover:text-blue-600 transition-colors"
                 >
-                  {item.stats.map((stat, i) => {
-                    const Icon = iconMap[stat.icon];
-                    return (
-                      <motion.div
-                        key={i}
-                        variants={statItem}
-                        className="text-center"
-                      >
-                        <div className="mb-2 p-2 bg-blue-50 rounded-lg inline-block group-hover:bg-blue-100 transition-colors">
-                          <Icon className="w-5 h-5 text-blue-700" />
-                        </div>
-                        <p className="text-xl font-black text-primary tracking-tighter">{stat.value}</p>
-                        <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">{stat.label}</p>
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
-              </motion.div>
+                  <span>Inquire About This Route</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

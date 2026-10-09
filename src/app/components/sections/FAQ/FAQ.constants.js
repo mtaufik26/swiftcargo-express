@@ -1,46 +1,57 @@
-export const SECTION_HEADER = {
-  label: "FAQ",
-  title: "Pertanyaan yang Sering Diajukan",
-  description: "Temukan jawaban untuk pertanyaan umum tentang layanan kami",
+export const FAQ_HEADER = {
+  badge: "FAQ",
+  headline: "Frequently Asked Questions",
+  description: "Find clear answers to common questions about our freight services, service level agreements, and commercial terms.",
 };
 
 export const FAQS = [
   {
-    question: "Berapa biaya pengiriman untuk paket 5kg dari Jakarta ke Bandung?",
-    answer: "Biaya pengiriman untuk paket 5kg dari Jakarta ke Bandung mulai dari Rp 35.000 untuk reguler (2-3 hari) dan Rp 55.000 untuk same-day delivery. Harga dapat bervariasi tergantung dimensi paket dan layanan tambahan yang dipilih.",
+    question: "What types of cargo and freight volumes do you handle?",
+    answer: "We handle commercial and industrial cargo ranging from Less-than-Truckload (LTL) palletized consignments to dedicated Full Truckload (FTL) wingbox trucks and multimodal sea containers. We do not transport hazardous materials (Class 1) or prohibited goods.",
   },
   {
-    question: "Apakah ada asuransi untuk barang yang dikirim?",
-    answer: "Ya, kami menyediakan asuransi pengiriman dengan coverage hingga 100% nilai barang. Premi asuransi mulai dari 0.5% dari nilai barang. Untuk barang berharga tinggi, kami sangat menyarankan menggunakan asuransi.",
+    question: "How does SwiftCargo maintain its 99.4% on-time delivery record?",
+    answer: "Our reliability is anchored in disciplined scheduled departures, dedicated commercial driver teams, automated GPS route tracking, and backup fleet buffers stationed at each major regional hub to absorb unexpected highway delays.",
   },
   {
-    question: "Bagaimana cara melacak pengiriman saya?",
-    answer: "Anda dapat melacak pengiriman melalui website kami dengan memasukkan nomor resi, atau melalui aplikasi mobile SwiftCargo. Sistem tracking kami update secara real-time dan Anda akan mendapat notifikasi otomatis via SMS/email di setiap tahap pengiriman.",
+    question: "Is insurance protection included for all consignments?",
+    answer: "Yes, every registered shipment is protected by all-risk commercial cargo insurance covering transit risks from initial pickup to final dock delivery. High-value cargo policies can be tailored to match exact invoice valuations.",
   },
   {
-    question: "Berapa lama waktu pengiriman untuk luar Jawa?",
-    answer: "Waktu pengiriman untuk luar Jawa bervariasi: Sumatera 3-5 hari, Kalimantan 4-6 hari, Sulawesi 5-7 hari, Bali & Nusa Tenggara 4-6 hari, Papua & Maluku 7-10 hari. Kami juga menyediakan layanan express yang lebih cepat.",
+    question: "Can business clients apply for invoice credit terms (Net 30)?",
+    answer: "Yes. Enterprise and recurring B2B partners can establish corporate billing with Net 14, Net 30, or Net 60 payment terms following a straightforward verification of business registration credentials.",
   },
   {
-    question: "Apakah SwiftCargo menerima pengiriman internasional?",
-    answer: "Ya, kami melayani pengiriman internasional ke lebih dari 25 negara di Asia, Eropa, dan Amerika. Untuk pengiriman internasional, silakan hubungi tim kami untuk informasi detail mengenai dokumen yang diperlukan dan estimasi biaya.",
-  },
-  {
-    question: "Bagaimana prosedur jika barang rusak atau hilang?",
-    answer: "Jika barang rusak atau hilang, Anda dapat mengajukan klaim dalam waktu 7 hari setelah pengiriman. Proses klaim dapat dilakukan online dengan melampirkan foto barang dan dokumen pengiriman. Klaim akan diproses dalam 3-5 hari kerja.",
-  },
-  {
-    question: "Apakah ada layanan pickup ke rumah/kantor?",
-    answer: "Ya, kami menyediakan layanan pickup gratis untuk area Jakarta, Bogor, Depok, Tangerang, dan Bekasi. Untuk area lain, biaya pickup mulai dari Rp 15.000. Anda dapat menjadwalkan pickup melalui website atau aplikasi kami.",
-  },
-  {
-    question: "Barang apa saja yang tidak boleh dikirim?",
-    answer: "Barang yang tidak boleh dikirim meliputi: barang ilegal, narkotika, senjata tajam/api, bahan mudah terbakar/peledak, hewan hidup (kecuali dengan izin khusus), uang tunai, dan barang berharga tanpa asuransi. Daftar lengkap tersedia di halaman Terms & Conditions.",
+    question: "How do I schedule a pickup or request a customized rate quote?",
+    answer: "Simply submit your shipment details via our online quote form below, or reach out directly to our commercial team at contact@swiftcargo.com. A dedicated logistics representative will respond within business hours with a formal proposal.",
   },
 ];
 
-export const CTA = {
-  text: "Masih ada pertanyaan?",
-  buttonText: "Hubungi Kami",
-  buttonHref: "#contact",
+export const FAQ_SIDEBAR = {
+  cardTitle: "Need Direct Assistance?",
+  cardDescription: "Our freight coordinators are on standby to answer custom routing, capacity, or documentation questions.",
+  phone: "+1 (800) 555-0199",
+  phoneLabel: "Toll-Free Dispatch Support",
+  hours: "Mon - Fri: 7:00 AM - 8:00 PM CST",
+  email: "dispatch@swiftcargo.com",
+  ctaText: "Contact Dispatch Team",
+  ctaHref: "#contact",
+  resourcesTitle: "Helpful Documentation",
+  resources: [
+    {
+      title: "Standard Bill of Lading (BOL)",
+      format: "PDF Template",
+      size: "240 KB",
+    },
+    {
+      title: "Cargo Packaging Guidelines",
+      format: "PDF Guide",
+      size: "1.2 MB",
+    },
+    {
+      title: "All-Risk Insurance Terms",
+      format: "Policy Summary",
+      size: "350 KB",
+    },
+  ],
 };

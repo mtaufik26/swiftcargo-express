@@ -1,71 +1,36 @@
-export const CTA_SECTION = {
-  title: "Siap Mengirim Paket Anda?",
-  description: "Bergabunglah dengan 500+ perusahaan yang telah mempercayakan kebutuhan logistik mereka kepada SwiftCargo.",
-  buttons: [
-    { text: "Dapatkan Penawaran", href: "#contact", variant: "primary" },
-    { text: "Pelajari Layanan", href: "#services", variant: "secondary" },
-  ],
-  stats: [
-    { value: "99%", label: "On-Time Delivery" },
-    { value: "500+", label: "Klien Aktif" },
-    { value: "50+", label: "Kota Terjangkau" },
-  ],
-};
-
-export const BRAND_SECTION = {
+export const BRAND_FOOTER = {
   name: "SwiftCargo",
-  description: "Solusi logistik modern dengan fokus pada kecepatan, transparansi, dan keamanan pengiriman untuk bisnis dan personal di seluruh Indonesia.",
+  tag: "Express Freight",
+  description: "End-to-end overland freight, scheduled air cargo, and multimodal supply chain logistics designed for growing commercial enterprises.",
+  phone: "+1 (800) 555-0199",
+  email: "contact@swiftcargo.com",
   socialLinks: [
-    { name: "Facebook", href: "#", icon: "FaFacebookF" },
+    { name: "LinkedIn", href: "#", icon: "FaLinkedinIn" },
     { name: "Twitter/X", href: "#", icon: "FaXTwitter" },
     { name: "Instagram", href: "#", icon: "FaInstagram" },
-    { name: "LinkedIn", href: "#", icon: "FaLinkedinIn" },
-    { name: "WhatsApp", href: "#", icon: "FaWhatsapp" },
-  ],
-  contactInfo: [
-    { type: "email", icon: "Mail", label: "info@swiftcargo.com", href: "mailto:info@swiftcargo.com" },
-    { type: "phone", icon: "Phone", label: "0800-123-4567", href: "tel:08001234567" },
-    { type: "address", icon: "MapPin", label: "Jakarta, Indonesia", href: null },
+    { name: "Facebook", href: "#", icon: "FaFacebookF" },
   ],
 };
 
-export const FOOTER_LINKS = {
-  layanan: [
-    { name: "Same-Day Delivery", href: "#services" },
-    { name: "Cargo Antar Kota", href: "#services" },
-    { name: "Warehousing", href: "#services" },
-    { name: "International Shipping", href: "#services" },
-    { name: "E-Commerce Fulfillment", href: "#services" },
+export const FOOTER_COLUMNS = {
+  Services: [
+    { name: "Overland Freight (FTL & LTL)", href: "#services" },
+    { name: "Express Air Freight", href: "#services" },
+    { name: "Maritime Container Shipping", href: "#services" },
+    { name: "Cold Chain Transport", href: "#services" },
+    { name: "Contract Warehousing", href: "#services" },
   ],
-  perusahaan: [
-    { name: "Tentang Kami", href: "#about" },
-    { name: "Keunggulan", href: "#advantages" },
-    { name: "Portofolio", href: "#portfolio" },
-    { name: "Testimoni", href: "#testimonials" },
-    { name: "Karir", href: "#" },
+  Company: [
+    { name: "About SwiftCargo", href: "#about" },
+    { name: "Logistics Network", href: "#portfolio" },
+    { name: "Our Standards & SLA", href: "#advantages" },
+    { name: "Client Stories", href: "#testimonials" },
+    { name: "Careers", href: "#" },
   ],
-  bantuan: [
-    { name: "FAQ", href: "#faq" },
-    { name: "Cara Tracking", href: "#" },
-    { name: "Syarat & Ketentuan", href: "#" },
-    { name: "Kebijakan Privasi", href: "#" },
-    { name: "Kebijakan Cookie", href: "#" },
+  Support: [
+    { name: "Frequently Asked Questions", href: "#faq" },
+    { name: "Terms of Carriage", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Cargo Claims Procedure", href: "#" },
   ],
-};
-
-export const LEGAL_LINKS = [
-  { name: "Privacy Policy", href: "#" },
-  { name: "Terms of Service", href: "#" },
-  { name: "Cookie Policy", href: "#" },
-];
-
-export const ICON_MAP = {
-  FaFacebookF: "FaFacebookF",
-  FaXTwitter: "FaXTwitter",
-  FaInstagram: "FaInstagram",
-  FaLinkedinIn: "FaLinkedinIn",
-  FaWhatsapp: "FaWhatsapp",
-  Mail: "Mail",
-  Phone: "Phone",
-  MapPin: "MapPin",
 };

@@ -9,6 +9,14 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.ngrok-free.dev',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+      },
     ],
   },
 };

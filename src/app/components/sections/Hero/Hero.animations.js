@@ -1,85 +1,114 @@
-import { fadeInUp } from "@/lib/animations/variants";
-import { springSmooth, easeOut } from "@/lib/animations/transitions";
+// Hardware-accelerated entrance variants with luxurious, clearly felt pacing
+// Uses silky smooth cubic bezier [0.16, 1, 0.3, 1] for 60fps/120fps butter-smooth execution
 
-// Badge animasi - muncul pertama
+export const heroContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.15,
+    },
+  },
+};
+
 export const badge = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ...easeOut },
+    transition: {
+      duration: 0.95,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
-// Headline animasi - muncul setelah badge
 export const headline = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 36 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.2, ...springSmooth },
+    transition: {
+      duration: 1.1,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
-// Description animasi - muncul setelah headline
 export const description = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.4, ...springSmooth },
+    transition: {
+      duration: 1.05,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
-// CTA Buttons animasi - muncul setelah description
 export const ctas = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.6, ...springSmooth },
+    transition: {
+      duration: 1.05,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
-// Stats animasi - muncul terakhir
-export const stats = {
-  hidden: { opacity: 0, y: 20 },
+export const proofPills = {
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 0.8, ...springSmooth },
+    transition: {
+      duration: 0.95,
+      ease: [0.16, 1, 0.3, 1],
+    },
   },
 };
 
-// Visual Column animation - enters from right
 export const visualColumn = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, y: 44, scale: 0.95 },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { duration: 0.8, delay: 0.4, ...springSmooth },
-  },
-};
-
-// Floating animation for UI cards
-export const floating = {
-  animate: {
-    y: [0, -15, 0],
+    y: 0,
+    scale: 1,
     transition: {
-      duration: 5,
-      repeat: Infinity,
-      ease: "easeInOut",
+      duration: 1.25,
+      ease: [0.16, 1, 0.3, 1],
+      delay: 0.3,
     },
   },
 };
 
-// Container stagger untuk future expansion
-export const container = {
-  hidden: {},
+export const metricsRibbon = {
+  hidden: { opacity: 0, y: 36 },
   visible: {
+    opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
+      duration: 1.1,
+      ease: [0.16, 1, 0.3, 1],
+      delay: 0.5,
     },
   },
 };
+
+export const metricItem = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.85,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+

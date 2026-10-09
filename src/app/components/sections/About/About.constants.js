@@ -1,32 +1,39 @@
-export const SECTION_LABEL = "Tentang Kami";
-
-export const HEADLINE = {
-  main: "Solusi Logistik Modern untuk Kebutuhan Pengiriman Anda",
-  description: "SwiftCargo Express adalah perusahaan logistik terpercaya yang menyediakan layanan pengiriman cepat, aman, dan profesional untuk kebutuhan bisnis maupun personal di seluruh Indonesia.",
+export const ABOUT_HEADER = {
+  badge: "About SwiftCargo",
+  headline: "Engineered for Speed, Reliability, and Precision",
+  description: "From strategic cross-docking facilities to GPS-monitored commercial fleets, SwiftCargo provides the vital logistics backbone that keeps modern businesses moving forward.",
 };
 
-export const FEATURES = [
-  { icon: "Clock", title: "Pengiriman Cepat", desc: "Tepat waktu dan efisien" },
-  { icon: "Shield", title: "Keamanan Terjamin", desc: "Asuransi untuk setiap pengiriman" },
-  { icon: "MapPin", title: "Jangkauan Luas", desc: "50+ kota di Indonesia" },
-  { icon: "CheckCircle", title: "Tracking Real-time", desc: "Pantau pengiriman 24/7" },
+export const ABOUT_PILLARS = [
+  {
+    icon: "Truck",
+    title: "Modern Fleet & Smart Telematics",
+    desc: "Over 500 standardized commercial vehicles—from light duty box trucks to 32-ton wingboxes—equipped with digital tracking and route optimization.",
+    stat: "500+ Units",
+    statLabel: "Commercial Fleet",
+  },
+  {
+    icon: "Warehouse",
+    title: "Strategic Hubs & Warehousing",
+    desc: "18 strategically situated regional fulfillment and cross-docking facilities ensuring seamless freight transfers and reduced dwell times.",
+    stat: "120,000 m²",
+    statLabel: "Storage Capacity",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Comprehensive Cargo Protection",
+    desc: "Every shipment is secured with all-risk cargo insurance and tamper-evident electronic seals, supported by a 72-hour fast-track claims process.",
+    stat: "100%",
+    statLabel: "Insured Value",
+  },
 ];
 
-export const IMAGES = [
-  { src: "/assets/images/about/warehouse.png", alt: "Warehouse", height: "h-40 md:h-64", order: "first" },
-  { src: "/assets/images/about/delivery.png", alt: "Delivery", height: "h-32 md:h-48", order: "second" },
-  { src: "/assets/images/about/team.png", alt: "Team", height: "h-32 md:h-48", order: "third" },
-  { src: "/assets/images/about/app.png", alt: "Logistics", height: "h-40 md:h-64", order: "fourth" },
-];
-
-export const EXPERIENCE_BADGE = {
-  value: "10+",
-  label: "Tahun Pengalaman",
+export const ABOUT_IMAGES = {
+  main: "/assets/images/about/warehouse.png",
+  secondary: "/assets/images/about/delivery.png",
 };
 
-export const CLIENT_STATS = {
-  avatars: [11, 12, 13, 14], // pravatar.cc img params
-  count: "500+",
-  label: "Klien Puas",
-  sublabel: "Bergabung dengan kami",
+export const ABOUT_BADGE = {
+  years: "10+",
+  label: "Years of Industry Excellence",
 };

@@ -1,33 +1,31 @@
 export const NAV_LINKS = [
-  { name: "Tentang", href: "#about" },
-  { name: "Layanan", href: "#services" },
-  { name: "Keunggulan", href: "#advantages" },
-  { name: "Portofolio", href: "#portfolio" },
-  { name: "Testimoni", href: "#testimonials" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Network", href: "#portfolio" },
+  { name: "Why Us", href: "#advantages" },
+  { name: "Reviews", href: "#testimonials" },
   { name: "FAQ", href: "#faq" },
-  { name: "Kontak", href: "#contact" },
 ];
 
 export const FOOTER_LINKS = {
-  layanan: [
-    { name: "Same-Day Delivery", href: "#services" },
-    { name: "Cargo Antar Kota", href: "#services" },
-    { name: "Warehousing", href: "#services" },
-    { name: "International Shipping", href: "#services" },
-    { name: "E-Commerce Fulfillment", href: "#services" },
+  services: [
+    { name: "Overland Freight (FTL & LTL)", href: "#services" },
+    { name: "Express Air Freight", href: "#services" },
+    { name: "Intermodal Container Shipping", href: "#services" },
+    { name: "Cold Chain Solutions", href: "#services" },
+    { name: "Contract Warehousing", href: "#services" },
   ],
-  perusahaan: [
-    { name: "Tentang Kami", href: "#about" },
-    { name: "Keunggulan", href: "#advantages" },
-    { name: "Portofolio", href: "#portfolio" },
-    { name: "Testimoni", href: "#testimonials" },
-    { name: "Karir", href: "#" },
+  company: [
+    { name: "About Us", href: "#about" },
+    { name: "Logistics Network", href: "#portfolio" },
+    { name: "Service Standards", href: "#advantages" },
+    { name: "Client Stories", href: "#testimonials" },
+    { name: "Careers", href: "#" },
   ],
-  bantuan: [
-    { name: "FAQ", href: "#faq" },
-    { name: "Cara Tracking", href: "#" },
-    { name: "Syarat & Ketentuan", href: "#" },
-    { name: "Kebijakan Privasi", href: "#" },
-    { name: "Kebijakan Cookie", href: "#" },
+  support: [
+    { name: "Frequently Asked Questions", href: "#faq" },
+    { name: "Terms of Carriage", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Safety & Compliance", href: "#" },
   ],
 };

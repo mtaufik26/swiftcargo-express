@@ -1,177 +1,126 @@
-  "use client";
+"use client";
 
-  import { motion } from "framer-motion";
-  import { CheckCircle, Shield, Clock, MapPin, Award } from "lucide-react";
-  import { 
-    container, imageColumn,
-    label, headline, description, featureItem, clientStats, viewport, badge 
-  } from "./About.animations";
-  import { 
-    SECTION_LABEL, HEADLINE, FEATURES, IMAGES, EXPERIENCE_BADGE, CLIENT_STATS 
-  } from "./About.constants";
+import { motion } from "framer-motion";
+import { Truck, Warehouse, ShieldCheck, Award, ArrowUpRight } from "lucide-react";
+import { ABOUT_HEADER, ABOUT_PILLARS, ABOUT_IMAGES, ABOUT_BADGE } from "./About.constants";
 
-  const iconMap = { CheckCircle, Shield, Clock, MapPin };
+const iconMap = { Truck, Warehouse, ShieldCheck };
 
-  export default function About() {
-    return (
-      <section id="about" className="relative bg-white py-16 md:py-20 lg:py-28 px-4 sm:px-6 overflow-hidden">
+export default function About() {
+  return (
+    <section id="about" className="relative py-20 md:py-28 lg:py-32 px-4 sm:px-6 bg-white border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto">
         
-        {/* BACKGROUND */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-40" />
-          <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-slate-50 rounded-full blur-3xl opacity-60" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            
-            {/* ================= LEFT (IMAGES) ================= */}
-            <motion.div 
-              variants={imageColumn}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewport}
-              className="relative"
-            >
-              <div className="relative grid grid-cols-12 gap-3 sm:gap-6">
-                
-                {/* MAIN IMAGE */}
-                <div className="col-span-7 md:col-span-7 row-span-2">
-                  <img 
-                    src={IMAGES[0].src}
-                    alt={IMAGES[0].alt}
-                    className="rounded-[1.5rem] sm:rounded-[2.5rem] w-full h-[260px] sm:h-[420px] md:h-[520px] object-cover border-[3px] sm:border-8 border-white shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
-                  />
-                </div>
-
-                {/* RIGHT TOP */}
-                <div className="col-span-5 md:col-span-5 mt-4 sm:mt-8 md:mt-0">
-                  <img 
-                    src={IMAGES[1].src}
-                    alt={IMAGES[1].alt}
-                    className="rounded-[1rem] sm:rounded-[2rem] w-full h-[120px] sm:h-[200px] md:h-[240px] object-cover border-[3px] sm:border-4 border-white shadow-xl"
-                  />
-                </div>
-
-                {/* RIGHT BOTTOM */}
-                <div className="col-span-5 md:col-span-5 mt-3 sm:mt-6 md:mt-0">
-                  <img 
-                    src={IMAGES[2].src}
-                    alt={IMAGES[2].alt}
-                    className="rounded-[1rem] sm:rounded-[2rem] w-full h-[120px] sm:h-[200px] md:h-[240px] object-cover border-[3px] sm:border-4 border-white shadow-xl"
-                  />
-                </div>
-
-              </div>
-
-              {/* BADGE CONTAINER - Di bawah semua foto */}
-              <motion.div
-                variants={badge}
-                className="mt-6 sm:mt-8 flex justify-center"
-              >
-                <div className="bg-white px-6 sm:px-8 py-4 rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-100 text-center w-full">
-                  
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 mx-auto mb-1.5" />
-                  
-                  <p className="text-2xl sm:text-3xl font-bold text-primary leading-none mb-0.5">
-                    {EXPERIENCE_BADGE.value}
-                  </p>
-                  
-                  <p className="text-xs sm:text-sm text-slate-600 font-medium">
-                    {EXPERIENCE_BADGE.label}
-                  </p>
-
-                </div>
-              </motion.div>
-
-              {/* DECOR */}
-              <div className="absolute -top-6 -left-6 sm:-top-10 sm:-left-10 w-20 h-20 sm:w-32 sm:h-32 bg-blue-100/50 rounded-full blur-2xl" />
-            </motion.div>
-
-            {/* ================= RIGHT (CONTENT) ================= */}
-            <motion.div
-              variants={container}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewport}
-              className="lg:pl-8"
-            >
-
-              {/* LABEL */}
-              <motion.div variants={label} className="flex items-center gap-3 mb-6">
-                <div className="h-[2px] w-8 bg-blue-700" />
-                <p className="text-sm font-bold text-blue-700 tracking-[0.2em] uppercase">
-                  {SECTION_LABEL}
-                </p>
-              </motion.div>
-
-              {/* TITLE */}
-              <motion.h2 variants={headline} className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-primary mb-6 md:mb-8 leading-[1.1] tracking-tight">
-                {HEADLINE.main}
-              </motion.h2>
-
-              {/* DESC */}
-              <motion.p variants={description} className="text-slate-600 mb-10 md:mb-12 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl font-medium">
-                {HEADLINE.description}
-              </motion.p>
-
-              {/* FEATURES */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-                {FEATURES.map((f, i) => {
-                  const Icon = iconMap[f.icon];
-                  return (
-                    <motion.div
-                      key={i}
-                      variants={featureItem}
-                      className="group p-5 sm:p-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                    >
-                      <div className="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg mb-4 group-hover:bg-blue-100 transition">
-                        <Icon className="w-5 h-5 text-blue-700" />
-                      </div>
-
-                      <h3 className="font-bold text-primary text-lg mb-1">
-                        {f.title}
-                      </h3>
-
-                      <p className="text-sm text-slate-500 leading-relaxed font-medium">
-                        {f.desc}
-                      </p>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* CLIENT STATS */}
-              <motion.div
-                variants={clientStats}
-                className="flex items-center gap-4 sm:gap-6 px-5 py-4 bg-white rounded-2xl border border-slate-100 shadow-xl w-full sm:w-fit"
-              >
-                {/* AVATAR */}
-                <div className="flex -space-x-3 shrink-0">
-                  {CLIENT_STATS.avatars.map((id, i) => (
-                    <img
-                      key={id}
-                      src={`https://i.pravatar.cc/100?img=${id}`}
-                      alt="Client"
-                      className="w-10 h-10 rounded-full border-2 border-white object-cover"
-                    />
-                  ))}
-                </div>
-
-                {/* TEXT */}
-                <div className="flex flex-col leading-tight">
-                  <p className="font-bold text-primary text-base sm:text-lg">
-                    {CLIENT_STATS.count} {CLIENT_STATS.label}
-                  </p>
-                  <p className="text-[10px] sm:text-[11px] text-blue-600 font-bold tracking-wider uppercase">
-                    {CLIENT_STATS.sublabel}
-                  </p>
-                </div>
-              </motion.div>
-
-            </motion.div>
+        {/* SECTION HEADER */}
+        <motion.div 
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-3xl mb-14 md:mb-20"
+        >
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-200/60 mb-4 w-fit">
+            <span>{ABOUT_HEADER.badge}</span>
           </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-5">
+            {ABOUT_HEADER.headline}
+          </h2>
+
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            {ABOUT_HEADER.description}
+          </p>
+        </motion.div>
+
+        {/* 2-COLUMN SHOWCASE */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          
+          {/* LEFT: IMAGE COMPOSITION (5 COLS) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-900/5 bg-slate-100">
+              <img
+                src={ABOUT_IMAGES.main}
+                alt="SwiftCargo Modern Warehouse Facility"
+                className="w-full h-[320px] sm:h-[400px] md:h-[460px] object-cover"
+                loading="lazy"
+              />
+
+              {/* INSET SECONDARY IMAGE */}
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-44 sm:w-56 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+                <img
+                  src={ABOUT_IMAGES.secondary}
+                  alt="SwiftCargo Fleet Dispatch"
+                  className="w-full h-28 sm:h-36 object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* EXPERIENCE BADGE OVERLAY */}
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-slate-900/90 backdrop-blur-md text-white px-4 sm:px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shrink-0">
+                  <Award className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xl sm:text-2xl font-black tracking-tight leading-none">
+                    {ABOUT_BADGE.years}
+                  </p>
+                  <p className="text-xs text-slate-300 font-medium mt-1">
+                    {ABOUT_BADGE.label}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT: 3 VALUE PILLARS (7 COLS) */}
+          <div className="lg:col-span-7 space-y-5">
+            {ABOUT_PILLARS.map((pillar, idx) => {
+              const Icon = iconMap[pillar.icon];
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: idx * 0.14 }}
+                  className="bg-slate-50/70 p-6 sm:p-7 rounded-2xl border border-slate-200/90 hover:bg-white hover:border-slate-300 hover:shadow-md transition-all duration-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 border border-blue-100">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed font-normal max-w-lg">
+                        {pillar.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="sm:text-right shrink-0 pl-15 sm:pl-0">
+                    <span className="text-xl sm:text-2xl font-black text-slate-900 block leading-tight">
+                      {pillar.stat}
+                    </span>
+                    <span className="text-xs font-semibold text-slate-400">
+                      {pillar.statLabel}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
         </div>
-      </section>
-    );
-  }
+
+      </div>
+    </section>
+  );
+}

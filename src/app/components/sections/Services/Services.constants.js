@@ -1,53 +1,52 @@
-export const SECTION_HEADER = {
-  label: "Layanan Kami",
-  title: "Solusi Logistik yang Fleksibel",
-  description: "Setiap layanan dirancang untuk memberikan kecepatan, keamanan, dan transparansi dalam proses pengiriman.",
+export const SERVICES_HEADER = {
+  badge: "Our Services",
+  headline: "End-to-End Multimodal Freight Solutions",
+  description: "Whether moving high-volume retail goods or time-critical shipments, our specialized freight modes deliver maximum dependability.",
 };
 
 export const SERVICES = [
   {
-    icon: "Clock",
-    title: "Same-Day Delivery",
-    desc: "Pengiriman dalam hari yang sama dengan proses cepat dan efisien untuk kebutuhan mendesak Anda. Jaminan sampai di hari yang sama untuk area tertentu.",
-    features: ["Pickup dalam 1 jam", "Delivery 4-8 jam", "Real-time tracking"],
-  },
-  {
     icon: "Truck",
-    title: "Cargo Antar Kota",
-    desc: "Layanan pengiriman barang skala besar antar kota dengan sistem distribusi yang aman dan terpercaya untuk bisnis Anda.",
-    features: ["Kapasitas besar", "Harga kompetitif", "Asuransi tersedia"],
+    title: "Overland Freight (FTL & LTL)",
+    description: "Scheduled full-truckload (FTL) and consolidated (LTL) services covering all major highway corridors with daily departures.",
+    features: [
+      "Dedicated commercial fleet (CDD to 32-ton Wingbox)",
+      "Daily scheduled departures on primary corridors",
+      "Real-time GPS tracking & electronic seal verification",
+    ],
+    highlight: "Daily Departures",
   },
   {
-    icon: "Globe",
-    title: "Real-Time Tracking",
-    desc: "Pantau status pengiriman Anda secara langsung dengan sistem tracking transparan yang dapat diakses 24/7 melalui website atau aplikasi.",
-    features: ["Update real-time", "Notifikasi otomatis", "Riwayat pengiriman"],
+    icon: "Plane",
+    title: "Express Air Freight",
+    description: "Time-critical cargo shipping utilizing commercial airline networks and dedicated air freighters for urgent deliveries.",
+    features: [
+      "Priority next-day port-to-door delivery",
+      "High-value cargo handling & airport escort",
+      "Seamless customs & airport manifest processing",
+    ],
+    highlight: "24-48h Delivery",
   },
   {
-    icon: "Warehouse",
-    title: "Warehousing",
-    desc: "Penyimpanan barang dengan sistem modern dan keamanan tinggi untuk menjaga kualitas dan efisiensi distribusi bisnis Anda.",
-    features: ["Gudang ber-AC", "Security 24/7", "Inventory management"],
+    icon: "Ship",
+    title: "Maritime & Intermodal Cargo",
+    description: "Cost-effective containerized shipping (FCL & LCL) connecting major island ports with integrated port drayage trucking.",
+    features: [
+      "Standard 20ft & 40ft dry container shipping",
+      "Integrated port pickup and final-mile delivery",
+      "Volume discounts for scheduled recurring freight",
+    ],
+    highlight: "Island-to-Island",
   },
   {
-    icon: "Package",
-    title: "Express Delivery",
-    desc: "Layanan pengiriman kilat untuk dokumen dan paket penting dengan prioritas penanganan khusus dan jaminan keamanan maksimal.",
-    features: ["Prioritas handling", "Signature required", "Insurance included"],
-  },
-  {
-    icon: "Shield",
-    title: "Cargo Insurance",
-    desc: "Perlindungan penuh untuk setiap pengiriman dengan opsi asuransi yang fleksibel sesuai nilai barang yang Anda kirim.",
-    features: ["Coverage hingga 100%", "Klaim mudah", "Proses cepat"],
+    icon: "Snowflake",
+    title: "Cold Chain Transport",
+    description: "Insulated reefer transport maintaining strict temperature parameters (-20°C to +8°C) for pharmaceuticals and perishables.",
+    features: [
+      "Continuous digital temperature logging & alerts",
+      "Certified Good Distribution Practice (GDP) protocols",
+      "Dual-compressor backup systems on all reefer units",
+    ],
+    highlight: "-20°C to +8°C",
   },
 ];
-
-export const ICON_MAP = {
-  Clock: "Clock",
-  Truck: "Truck",
-  Globe: "Globe",
-  Warehouse: "Warehouse",
-  Package: "Package",
-  Shield: "Shield",
-};

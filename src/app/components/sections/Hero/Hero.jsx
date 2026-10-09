@@ -1,149 +1,252 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Truck, Package, Clock, ArrowRight } from "lucide-react";
-import { badge, headline, description, ctas, stats, visualColumn, floating } from "./Hero.animations";
-import { HERO_BADGE, HERO_CONTENT, HERO_CTAS, HERO_STATS, HERO_VISUALS } from "./Hero.constants";
-
-const iconMap = { Clock, Package, Truck };
+import { 
+  ArrowRight, ShieldCheck, CheckCircle2, Truck, 
+  Clock, Star, Lock 
+} from "lucide-react";
+import { HERO_CONTENT, ACTIVE_CONSIGNMENT, HERO_METRICS, HERO_IMAGE } from "./Hero.constants";
+import { 
+  heroContainer, badge, headline, description, 
+  ctas, proofPills, visualColumn, metricsRibbon, metricItem 
+} from "./Hero.animations";
 
 export default function Hero() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <section className="relative flex items-start bg-white pt-24 pb-12 sm:pt-32 sm:pb-14 md:pt-40 md:pb-24 lg:pt-30 lg:pb-32 px-4 sm:px-6 overflow-hidden">
-      
-      {/* BACKGROUND */}
-      <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[300px] sm:w-[450px] md:w-[600px] h-[300px] sm:h-[450px] md:h-[600px] bg-blue-50 rounded-full blur-3xl opacity-60 z-0" />
-      <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[220px] sm:w-[300px] md:w-[400px] h-[220px] sm:h-[300px] md:h-[400px] bg-slate-50 rounded-full blur-3xl opacity-80 z-0" />
-
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+    <motion.section 
+      initial="hidden"
+      animate={isMounted ? "visible" : "hidden"}
+      variants={heroContainer}
+      className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 md:pt-40 md:pb-24 px-4 sm:px-6 bg-slate-50/60 border-b border-slate-200/80 bg-grid-pattern overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto">
+        
+        {/* TOP EDITORIAL GRID */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center mb-16 md:mb-20">
           
-          {/* RIGHT COLUMN (GAMBAR) */}
-          <motion.div
-            variants={visualColumn}
-            initial="hidden"
-            animate="visible"
-            className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
-          >
-            {/* IMAGE CONTAINER FIX */}
-            <div className="relative z-10 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] shadow-lg sm:shadow-xl md:shadow-2xl shadow-blue-900/10 border-4 sm:border-6 md:border-8 border-white bg-white flex items-center justify-center p-2 sm:p-3 md:p-4">
-              <img
-                src={HERO_VISUALS.main}
-                alt="SwiftCargo Hero"
-                className="w-full h-full max-h-[260px] sm:max-h-[340px] md:max-h-[500px] object-contain"
-              />
-            </div>
-
-            {/* FLOATING CARD (SUDAH DISESUAIKAN) */}
-            <motion.div
-              variants={floating}
-              animate="animate"
-              className="absolute -bottom-3 -left-2 sm:-bottom-6 sm:-left-4 md:-bottom-10 md:-left-20 z-20 w-28 sm:w-36 md:w-64"
-            >
-              <div className="bg-white/90 backdrop-blur-md p-1.5 sm:p-2 rounded-xl sm:rounded-[1.5rem] md:rounded-[2rem] shadow-lg sm:shadow-xl md:shadow-2xl border border-white/50 overflow-hidden">
-                <img 
-                  src={HERO_VISUALS.tracking} 
-                  alt="Live Tracking" 
-                  className="w-full h-auto rounded-lg sm:rounded-xl md:rounded-[1.5rem]"
-                />
-              </div>
-            </motion.div>
-
-            {/* DECOR */}
-            <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 sm:w-24 md:w-32 h-16 sm:h-24 md:h-32 bg-blue-100 rounded-full blur-xl opacity-70 animate-pulse" />
-          </motion.div>
-
-          {/* LEFT COLUMN (TEXT) */}
-          <div className="order-2 lg:order-1">
+          {/* LEFT: EDITORIAL COPY & CONVICTION (7 COLS) */}
+          <div className="lg:col-span-7 flex flex-col justify-center">
             
-            {/* BADGE */}
-            <motion.div
+            {/* NETWORK STATUS BADGE */}
+            <motion.div 
               variants={badge}
-              initial="hidden"
-              animate="visible"
-              className="inline-flex items-center gap-2 border border-blue-100 px-2.5 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-bold text-blue-700 mb-5 sm:mb-6 md:mb-8 bg-blue-50/50 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-700 bg-white border border-slate-200 shadow-2xs mb-6 w-fit"
             >
-              <span className={`flex h-2 w-2 rounded-full ${HERO_BADGE.pulseColor} animate-pulse`} />
-              {HERO_BADGE.text}
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span>{HERO_CONTENT.badge}</span>
+              <span className="text-slate-300">•</span>
+              <span className="text-blue-600 font-bold">{HERO_CONTENT.badgeSla}</span>
             </motion.div>
 
             {/* HEADLINE */}
-            <motion.h1
+            <motion.h1 
               variants={headline}
-              initial="hidden"
-              animate="visible"
-              className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-[1.15] sm:leading-[1.1] mb-4 sm:mb-5 md:mb-6 tracking-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.08] mb-6 tracking-tight"
             >
               {HERO_CONTENT.headline}
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
+              <span className="text-blue-600">
                 {HERO_CONTENT.subheadline}
               </span>
             </motion.h1>
 
-            {/* DESCRIPTION */}
-            <motion.p
+            {/* SUBTITLE */}
+            <motion.p 
               variants={description}
-              initial="hidden"
-              animate="visible"
-              className="text-sm sm:text-base md:text-xl text-slate-600 max-w-xl mb-6 sm:mb-8 md:mb-10 leading-relaxed"
+              className="text-base sm:text-lg text-slate-600 max-w-xl mb-8 leading-relaxed font-normal"
             >
               {HERO_CONTENT.description}
             </motion.p>
 
-            {/* BUTTON */}
-            <motion.div
+            {/* CTAS */}
+            <motion.div 
               variants={ctas}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4 mb-8 sm:mb-10 md:mb-16"
+              className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 mb-8"
             >
-              {HERO_CTAS.map((cta, index) => (
-                <a
-                  key={index}
-                  href={cta.href}
-                  className={`${
-                    cta.variant === "primary"
-                      ? "bg-primary text-white hover:bg-primary-light shadow-md sm:shadow-lg hover:shadow-xl"
-                      : "bg-white border border-slate-200 text-primary hover:bg-slate-50"
-                  } px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg sm:rounded-xl md:rounded-2xl text-xs sm:text-sm md:text-base font-semibold transition-all flex items-center justify-center gap-2`}
-                >
-                  {cta.text}
-                  {cta.variant === "primary" && (
-                    <ArrowRight className="w-4 h-4" />
-                  )}
-                </a>
-              ))}
+              <a
+                href={HERO_CONTENT.primaryCta.href}
+                className="inline-flex items-center justify-center gap-2.5 bg-slate-900 hover:bg-blue-600 text-white px-7 py-3.5 rounded-xl text-sm sm:text-base font-bold shadow-sm transition-all duration-200 active:scale-95 cursor-pointer"
+              >
+                <span>{HERO_CONTENT.primaryCta.text}</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <a
+                href={HERO_CONTENT.secondaryCta.href}
+                className="inline-flex items-center justify-center gap-2 bg-white border border-slate-300 text-slate-800 hover:bg-slate-50 hover:text-slate-950 px-6 py-3.5 rounded-xl text-sm sm:text-base font-semibold shadow-2xs transition-all duration-200 cursor-pointer"
+              >
+                <span>{HERO_CONTENT.secondaryCta.text}</span>
+              </a>
             </motion.div>
 
-            {/* STATS */}
-            <motion.div
-              variants={stats}
-              initial="hidden"
-              animate="visible"
-              className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-8 border-t border-slate-100 pt-5 sm:pt-6 md:pt-10"
+            {/* TRUST PROOF PILLS */}
+            <motion.div 
+              variants={proofPills}
+              className="flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-500 font-medium pt-4 border-t border-slate-200/80"
             >
-              {HERO_STATS.map((stat, index) => {
-                const Icon = iconMap[stat.icon];
-                return (
-                  <div key={index} className="flex flex-col">
-                    <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 mb-1">
-                      <Icon className={`w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 ${stat.iconColor}`} />
-                      <span className="text-base sm:text-lg md:text-3xl font-bold text-primary">
-                        {stat.value}
-                      </span>
-                    </div>
-                    <p className="text-[8px] sm:text-[9px] md:text-sm text-slate-500 font-medium">
-                      {stat.label}
-                    </p>
-                  </div>
-                );
-              })}
+              <div className="flex items-center gap-1.5">
+                <div className="flex text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
+                  ))}
+                </div>
+                <span className="font-bold text-slate-800">4.9/5 Partner Rating</span>
+              </div>
+              <span className="text-slate-300 hidden sm:inline">•</span>
+              <span className="flex items-center gap-1 text-slate-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Zero Hidden Fees</span>
+              </span>
+              <span className="text-slate-300 hidden sm:inline">•</span>
+              <span className="flex items-center gap-1 text-slate-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>All-Risk Marine Coverage</span>
+              </span>
             </motion.div>
 
           </div>
+
+          {/* RIGHT: BESPOKE FREIGHT OPERATIONS ARTIFACT (5 COLS) */}
+          <motion.div 
+            variants={visualColumn}
+            className="lg:col-span-5 relative"
+          >
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-900/5 overflow-hidden">
+              
+              {/* TOP CONSIGNMENT MANIFEST HEADER */}
+              <div className="p-4 sm:p-5 border-b border-slate-100 bg-slate-900 text-white">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded-md bg-slate-800 text-blue-400 text-[10px] font-mono font-bold tracking-wider">
+                      {ACTIVE_CONSIGNMENT.manifestId}
+                    </span>
+                    <span className="text-xs font-semibold text-slate-300">
+                      Live Manifest
+                    </span>
+                  </div>
+
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800/80">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    {ACTIVE_CONSIGNMENT.status}
+                  </span>
+                </div>
+
+                {/* ROUTE CORRIDOR DISPLAY */}
+                <div className="flex items-center justify-between text-xs pt-1">
+                  <div>
+                    <span className="text-[10px] text-slate-400 block font-medium">Origin</span>
+                    <strong className="text-white font-bold">{ACTIVE_CONSIGNMENT.originName}</strong>
+                  </div>
+                  <div className="flex-1 px-4 flex flex-col items-center">
+                    <div className="w-full flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
+                      <div className="flex-1 h-0.5 bg-slate-700 relative overflow-hidden">
+                        <motion.div 
+                          className="h-full bg-blue-400 rounded-full" 
+                          initial={{ width: "0%" }}
+                          animate={isMounted ? { width: `${ACTIVE_CONSIGNMENT.progressPercent}%` } : { width: "0%" }}
+                          transition={{ duration: 2.0, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+                        />
+                      </div>
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-600 shrink-0" />
+                    </div>
+                    <span className="text-[9px] text-slate-400 font-mono mt-1">74% of Route</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-[10px] text-slate-400 block font-medium">Destination</span>
+                    <strong className="text-white font-bold">{ACTIVE_CONSIGNMENT.destName}</strong>
+                  </div>
+                </div>
+              </div>
+
+              {/* CENTER FLEET PHOTOGRAPHY */}
+              <div className="relative h-56 sm:h-64 bg-slate-100 overflow-hidden">
+                <img
+                  src={HERO_IMAGE.src}
+                  alt={HERO_IMAGE.alt}
+                  className="w-full h-full object-cover"
+                />
+
+                {/* OVERLAY PERFORMANCE BADGE (TOP-RIGHT) */}
+                <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-200/90 shadow-sm flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-blue-600" />
+                  <span className="text-xs font-bold text-slate-900">99.4% SLA Guaranteed</span>
+                </div>
+              </div>
+
+              {/* BOTTOM TELEMATICS & CARGO DETAILS */}
+              <div className="p-4 sm:p-5 bg-slate-50/80 border-t border-slate-100">
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div className="p-2.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+                    <div className="flex items-center gap-1.5 text-slate-500 mb-0.5">
+                      <Truck className="w-3.5 h-3.5 text-blue-600" />
+                      <span className="text-[10px] font-bold uppercase tracking-wider">Assigned Fleet</span>
+                    </div>
+                    <p className="font-bold text-slate-900">{ACTIVE_CONSIGNMENT.unitName}</p>
+                    <p className="text-[10px] text-slate-500">{ACTIVE_CONSIGNMENT.fleetType}</p>
+                  </div>
+
+                  <div className="p-2.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
+                    <div className="flex items-center gap-1.5 text-slate-500 mb-0.5">
+                      <Lock className="w-3.5 h-3.5 text-emerald-600" />
+                      <span className="text-[10px] font-bold uppercase tracking-wider">Cargo Security</span>
+                    </div>
+                    <p className="font-bold text-slate-900">Tamper-Proof RFID</p>
+                    <p className="text-[10px] text-slate-500">Seal Active • Verified</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-3 mt-3 border-t border-slate-200/70 text-[11px] text-slate-500 font-medium">
+                  <span className="flex items-center gap-1.5 text-slate-700">
+                    <Clock className="w-3.5 h-3.5 text-blue-600" />
+                    <span>Est. Delivery: <strong className="text-slate-900">{ACTIVE_CONSIGNMENT.etaTime}</strong></span>
+                  </span>
+                  <span className="text-blue-600 font-semibold">Priority Freight</span>
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
+
         </div>
+
+        {/* DOCKED METRICS RIBBON (UNIFIED ARCHITECTURAL BAR) */}
+        <motion.div 
+          variants={metricsRibbon}
+          className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden"
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 p-2 sm:p-3">
+            {HERO_METRICS.map((metric, idx) => (
+              <motion.div 
+                key={idx} 
+                variants={metricItem}
+                className="p-4 sm:p-6 text-center sm:text-left"
+              >
+                <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight block mb-1">
+                  {metric.value}
+                </span>
+                <h4 className="font-bold text-slate-800 text-sm">
+                  {metric.label}
+                </h4>
+                <p className="text-xs text-slate-400 mt-0.5 font-medium">
+                  {metric.subtext}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -1,9 +1,9 @@
 export const SITE = {
   name: "SwiftCargo Express",
-  tagline: "Pengiriman Cepat & Aman",
-  description: "Layanan logistik modern dengan pengiriman cepat, harga kompetitif, dan sistem tracking transparan untuk semua kebutuhan bisnis dan personal Anda.",
+  tagline: "Reliable Freight & Global Logistics",
+  description: "Modern logistics infrastructure providing overland freight, express air cargo, maritime shipping, and integrated warehousing for enterprise supply chains.",
   url: "https://swiftcargo.com",
-  email: "info@swiftcargo.com",
-  phone: "0800-123-4567",
-  address: "Jl. Logistik Raya No. 123, Jakarta Selatan, 12190, Indonesia",
+  email: "contact@swiftcargo.com",
+  phone: "+1 (800) 555-0199",
+  address: "742 Logistics Way, Suite 400, Chicago, IL 60601",
 };

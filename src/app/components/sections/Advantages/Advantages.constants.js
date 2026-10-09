@@ -1,59 +1,36 @@
-export const SECTION_HEADER = {
-  label: "Keunggulan",
-  title: "Kenapa Memilih SwiftCargo?",
-  description: "Kami berkomitmen memberikan layanan terbaik dengan standar internasional",
+export const ADVANTAGES_HEADER = {
+  badge: "Why SwiftCargo",
+  headline: "Built for Reliability at Enterprise Scale",
+  description: "We combine disciplined scheduling, certified fleet standards, and dedicated account support to deliver total peace of mind for your supply chain.",
 };
 
 export const ADVANTAGES = [
   {
-    icon: "Zap",
-    title: "Cepat & Tepat Waktu",
-    desc: "Proses pengiriman cepat dengan sistem yang sudah teroptimasi untuk memastikan paket sampai tepat waktu. 99% pengiriman on-time.",
-    stat: "99%",
-    statLabel: "On-Time Delivery",
+    icon: "ShieldCheck",
+    title: "Guaranteed SLA Performance",
+    desc: "Our rigorous scheduling protocols ensure a documented 99.4% on-time delivery record across all scheduled regional arteries.",
+    stat: "99.4%",
+    statLabel: "On-Time Arrival",
   },
   {
-    icon: "DollarSign",
-    title: "Harga Kompetitif",
-    desc: "Biaya pengiriman yang terjangkau tanpa mengurangi kualitas layanan dan keamanan barang. Dapatkan diskon untuk pengiriman rutin.",
-    stat: "30%",
-    statLabel: "Lebih Hemat",
+    icon: "BadgeDollarSign",
+    title: "Transparent Flat-Rate Pricing",
+    desc: "Upfront commercial proposals with no hidden terminal surcharges, unannounced toll add-ons, or surprise handling fees.",
+    stat: "100%",
+    statLabel: "All-Inclusive Quotes",
   },
   {
-    icon: "Eye",
-    title: "Tracking Transparan",
-    desc: "Pantau pengiriman Anda secara real-time dengan sistem yang akurat dan mudah diakses melalui website atau mobile app.",
+    icon: "Navigation",
+    title: "Total Cargo Visibility",
+    desc: "Continuous telematics tracking and electronic tamper-evident seal verification for every manifest from origin to destination.",
     stat: "24/7",
-    statLabel: "Real-time Tracking",
-  },
-  {
-    icon: "Award",
-    title: "Profesional & Berpengalaman",
-    desc: "Tim yang sudah berpengalaman lebih dari 10 tahun di bidang logistik dengan sertifikasi dan standar internasional.",
-    stat: "10+",
-    statLabel: "Tahun Pengalaman",
+    statLabel: "Route Telematics",
   },
   {
     icon: "Headphones",
-    title: "Customer Support 24/7",
-    desc: "Tim customer service siap membantu Anda kapan saja untuk menjawab pertanyaan dan menyelesaikan masalah pengiriman.",
-    stat: "<5",
-    statLabel: "Menit Response Time",
-  },
-  {
-    icon: "Lock",
-    title: "Keamanan Terjamin",
-    desc: "Setiap pengiriman diasuransikan dan ditangani dengan prosedur keamanan ketat untuk memastikan barang sampai dengan selamat.",
-    stat: "100%",
-    statLabel: "Insured",
+    title: "Dedicated Account Support",
+    desc: "Direct access to dedicated logistics dispatch managers who proactively coordinate your shipments and resolve transit inquiries.",
+    stat: "< 15m",
+    statLabel: "Support Response",
   },
 ];
-
-export const ICON_MAP = {
-  Zap: "Zap",
-  DollarSign: "DollarSign",
-  Eye: "Eye",
-  Award: "Award",
-  Headphones: "Headphones",
-  Lock: "Lock",
-};

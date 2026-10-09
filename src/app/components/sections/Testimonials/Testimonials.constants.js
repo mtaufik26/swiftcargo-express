@@ -1,58 +1,41 @@
-export const SECTION_HEADER = {
-  label: "Testimoni",
-  title: "Apa Kata Klien Kami?",
-  description: "Kepercayaan klien adalah prioritas utama kami",
+export const TESTIMONIALS_HEADER = {
+  badge: "Client Endorsements",
+  headline: "Trusted by Supply Chain Leaders Nationwide",
+  description: "Discover how leading retail, healthcare, and manufacturing brands achieve seamless distribution with SwiftCargo.",
 };
 
 export const TESTIMONIALS = [
   {
-    name: "Budi Santoso",
-    role: "CEO, TechStore Indonesia",
+    name: "Marcus Vance",
+    role: "VP of Supply Chain",
+    company: "Apex Consumer Goods",
     image: "https://i.pravatar.cc/150?img=11",
-    rating: 5,
-    content: "SwiftCargo sangat membantu bisnis e-commerce kami. Pengiriman cepat, tracking real-time, dan customer service yang responsif. Sangat direkomendasikan!",
-    company: "TechStore Indonesia",
+    sector: "Retail & FMCG",
+    quote: "SwiftCargo transformed our regional store distribution. Their disciplined FTL schedules and active tracking reduced out-of-stock incidents across our 400 retail locations to practically zero.",
   },
   {
-    name: "Siti Nurhaliza",
-    role: "Operations Manager, FreshMart",
+    name: "Dr. Sarah Chen",
+    role: "Director of Quality Logistics",
+    company: "BioMedica Healthcare",
     image: "https://i.pravatar.cc/150?img=5",
-    rating: 5,
-    content: "Cold chain logistics mereka sangat profesional. Produk makanan beku kami selalu sampai dalam kondisi sempurna. Partnership yang sangat berharga.",
-    company: "FreshMart",
+    sector: "Pharmaceuticals",
+    quote: "Temperature compliance is non-negotiable for our biological products. SwiftCargo’s dedicated reefer units and automated digital logs ensure flawless GDP adherence on every single run.",
   },
   {
-    name: "Ahmad Wijaya",
-    role: "Founder, FashionHub",
-    image: "https://i.pravatar.cc/150?img=3",
-    rating: 5,
-    content: "Dari 5 vendor logistik yang kami coba, SwiftCargo yang paling reliable. On-time delivery rate mereka benar-benar 99% seperti yang dijanjikan.",
-    company: "FashionHub",
-  },
-  {
-    name: "Dewi Lestari",
-    role: "Supply Chain Director, PharmaCare",
-    image: "https://i.pravatar.cc/150?img=9",
-    rating: 5,
-    content: "Untuk pengiriman obat-obatan yang memerlukan penanganan khusus, SwiftCargo sangat trustworthy. Sistem tracking dan dokumentasi sangat lengkap.",
-    company: "PharmaCare",
-  },
-  {
-    name: "Rudi Hartono",
-    role: "Owner, ElektroMart",
+    name: "David Ross",
+    role: "Head of Operations",
+    company: "Pioneer Automotive Systems",
     image: "https://i.pravatar.cc/150?img=12",
-    rating: 5,
-    content: "Harga kompetitif dengan kualitas layanan premium. Warehousing mereka juga sangat aman dan terorganisir. Hemat biaya logistik kami sampai 30%.",
-    company: "ElektroMart",
-  },
-  {
-    name: "Maya Kusuma",
-    role: "E-Commerce Manager, BeautyBox",
-    image: "https://i.pravatar.cc/150?img=10",
-    rating: 5,
-    content: "Same-day delivery mereka benar-benar same-day! Pelanggan kami sangat puas dengan kecepatan pengiriman. Repeat order meningkat 40%.",
-    company: "BeautyBox",
+    sector: "Automotive Manufacturing",
+    quote: "Their reliable next-day overland corridors eliminate parts delays for our assembly facilities. We consider SwiftCargo an essential, high-performing extension of our operations team.",
   },
 ];
 
-export const CLIENT_LOGOS = ["TechStore", "FreshMart", "FashionHub", "PharmaCare", "ElektroMart", "BeautyBox"];
+export const CLIENT_LOGOS = [
+  "Apex Goods",
+  "BioMedica",
+  "Pioneer Auto",
+  "Nordic Retail",
+  "Global Steel",
+  "Horizon Agro",
+];

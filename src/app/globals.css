@@ -7,6 +7,7 @@
   /* Navy Blue (slate-900) */
   --primary-light: #1e293b;
   --accent: #2563eb;
+  --accent-amber: #d97706;
 }
 
 @theme inline {
@@ -15,14 +16,33 @@
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
-  --font-sans: var(--font-inter);
+  --color-accent-amber: var(--accent-amber);
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
+@layer base {
+  * {
+    border-color: rgba(226, 232, 240, 0.9);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #0f172a;
+    background-color: #ffffff;
+  }
+
+  ::selection {
+    background-color: #1d4ed8;
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
 }
 
 @layer utilities {
@@ -32,5 +52,43 @@ body {
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+  }
+  
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Architectural Grid Pattern - Subtle & Technical (Not AI blobs) */
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+  }
+
+  .bg-grid-pattern-dark {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(51, 65, 85, 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(51, 65, 85, 0.3) 1px, transparent 1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

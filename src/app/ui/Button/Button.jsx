@@ -19,15 +19,16 @@ export default function Button({
     lg: "px-8 py-4 text-lg min-h-[52px]",
   };
   
+  const MotionComp = typeof Component === "string" && Component === "button" ? motion.button : motion.a;
+  
   return (
-    <motion.Component
+    <MotionComp
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(baseStyles, variants[variant], sizes[size], className)}
-      as={Component}
       {...props}
     >
       {children}
-    </motion.Component>
+    </MotionComp>
   );
 }

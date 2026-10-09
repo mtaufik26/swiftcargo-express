@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 export function useScrollSpy(sectionIds, offset = 100) {
   const [activeId, setActiveId] = useState("");
   
+  const idsKey = sectionIds.join(",");
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + offset;
@@ -21,7 +23,8 @@ export function useScrollSpy(sectionIds, offset = 100) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sectionIds, offset]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idsKey, offset]);
   
   return activeId;
 }
